@@ -2,12 +2,12 @@
 CRUD CATEGORIES
 */
 const router = require('express').Router();
-const Category = require('../models/category');
-// var VerifyToken= require('./VerifyToken');
+const Category = require('../models/category'); var VerifyToken= require('./VerifyToken');
 
 
 
 let logger = require('../../config/log');
+const verifyToken = require('./VerifyToken');
 
 
 //lista de catgegorias
@@ -27,7 +27,7 @@ router.get("/categories", (req, res) => {
 
 
 //Crear Categoria
-router.post("/categories", (req, res) => {
+router.post("/categories",verifyToken ,(req, res) => {
   logger.info("Begin insert category");
   const categoryData = {
     id: null,

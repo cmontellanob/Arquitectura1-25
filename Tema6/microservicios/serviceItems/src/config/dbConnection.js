@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 
 var pool = mysql.createPool({
-    host: "localhost",
+    host: "host.docker.internal",
     user: "root",
     password: "",
     database: "bd_tantakatu"
